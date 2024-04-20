@@ -21,16 +21,16 @@ html, body {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #8c3aff;
     color: white;
     border: none;
     border-radius: 20px; /* Rend les bords arrondis */
-    padding: 10px 20px;
+    padding: 20px 50px;
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #5b26a5;
 }
