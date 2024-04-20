@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-.center-container {
+center-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
