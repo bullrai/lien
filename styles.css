@@ -6,7 +6,19 @@ body {
     color: #333;
 }
 
+html, body {
+    height: 100%; /* Assure que le body prend toute la hauteur de la fenêtre du navigateur */
+    margin: 0; /* Enlève la marge par défaut */
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    flex-direction: column; /* Organise les enfants en colonne */
+}
+
+
 .center-container {
+	width: 100%; /* Prend toute la largeur */
+    	height: 100%; /* Prend toute la hauteur */
 	display: flex;
 	justify-content: center;
 	align-items: center;
