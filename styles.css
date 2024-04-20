@@ -1,5 +1,5 @@
 :root {
-	--text-color-light: #333;
+	--text-color-light: #FFF;
 	--text-color-dark: #E0E0E0;
 	--background-color-light: #FFF;
 	--background-color-dark: #121212;
@@ -22,11 +22,24 @@ body {
 	align-items: center; /* Centre verticalement */
 	flex-direction: column; /* Organise les enfants en colonne */
 	font-family: Arial, sans-serif; /* Police de caractère pour tout le document */
+	font-size: 16px;
 	line-height: 1.6;
-	/*background-color: var(--background-color-light);*/
+	background-color: var(--background-color-light);
 	color: var(--text-color-light);
 	background: transparent; /* Assure que body n'a pas de fond propre, évitant les superpositions indésirables */
 }
+
+p {
+	font-size: 1em; /* Taille de police standard pour les paragraphes */
+	line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+}
+
+h1 {
+	font-size: 2rem; /* Taille de police plus grande pour les titres principaux */
+	line-height: 1.2; /* Hauteur de ligne plus serrée pour les titres */
+	margin: 20px 0; /* Ajoute une marge au-dessus et en dessous du titre */
+}
+
 
 .classe-image {
 	margin-bottom: 5%; /* Ajoute une marge de 20 pixels en haut */
@@ -51,7 +64,7 @@ body {
 	flex-direction: column; /* Organise les enfants verticalement */
 	justify-content: center; /* Centre les enfants verticalement dans le conteneur */
 	align-items: center; /* Centre les enfants horizontalement dans le conteneur */
-	width: 100%; /* Prend la largeur totale du parent */
+	width: 80%; /* Prend la largeur totale du parent */
 	margin-top:3%;
 	background-color: transparent;
 }
@@ -67,8 +80,9 @@ button {
 	margin: 15px;
 	cursor: pointer;
 	transition: background-color 0.3s;
-	font-size:35px;
+	font-size: 35px;
 	white-space: nowrap;
+
 }
 
 button:focus {
@@ -83,25 +97,31 @@ button:hover {
 
 @media (max-width: 600px) {
 	body {
-		font-size: 14px; /* Réduit la taille de la police pour les petits écrans */
+		font-size: 16px; /* Réduit la taille de la police pour les petits écrans */
 	}
+	p {
+		font-size: 1em; /* Taille de police légèrement plus petite pour les mobiles */
+	}
+	h1 {
+		font-size: 150%; /* Taille de police réduite pour les titres sur mobile */
+	}
+}
 	.center-container {
-		margin-top: 20px; /* Réduit la marge en haut pour les petits écrans */
+		margin-top: 5%; /* Réduit la marge en haut pour les petits écrans */
 	}
 	button {
 		background-color: #4b97e3; /* Couleur spécifique pour petits écrans */
-		border: 3px solid #ffffff;
+		border: 1px solid #ffffff;
 		border-radius: 25px;
-		min-width: 80px;
-		padding: 3px 10px;
-		font-size: 14px;
+		min-width: 80%;
+		font-size: 115%;
 	}
 
 }
 
 @media (prefers-color-scheme: dark) {
 	body {
-		/*background-color: var(--background-color-dark);*/
+		background-color: var(--background-color-dark);
 		color: var(--text-color-dark);
 	}
 }
