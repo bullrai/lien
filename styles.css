@@ -3,6 +3,9 @@
 	--text-color-dark: #E0E0E0;
 	--background-color-light: #FFF;
 	--background-color-dark: #121212;
+	--border-color: #ffffff;
+	--button-font-size: 35px;
+	--button-padding: 5px 20px;
 }
 
 @keyframes shake {
@@ -40,6 +43,7 @@ body {
 	background: linear-gradient(to bottom, #afb9d7, #7e85ae);
 	/*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Icon_moon-wukong.png');
 	background-size: cover;*/
+	box-sizing: border-box;
 }
 
 h1 {
@@ -51,13 +55,6 @@ h1 {
 p {
 	font-size: 1em; /* Taille de police standard pour les paragraphes */
 	line-height: 1; /* Hauteur de ligne pour améliorer la lisibilité */
-}
-
-.classe-image {
-	margin-bottom: 5%; /* Ajoute une marge de 20 pixels en haut */
-	max-height: 15%; /* Assure que l'image reste responsive */
-	height: auto; /* Garde le ratio original de l'image */
-	width: auto;
 }
 
 .profile-image {
@@ -79,6 +76,7 @@ p {
 	/*width: 80%; /* Prend la largeur totale du parent */
 	margin-top:3%;
 	background-color: transparent;
+	box-sizing: border-box;
 }
 
 button {
@@ -86,33 +84,43 @@ button {
 	color: white;
 	min-width: 400px;
 	max-width: 800px;
-	border: 3px solid #ffffff;
+	border: 3px solid var(--border-color);
 	border-radius: 25px; /* Rend les bords arrondis */
-	padding: 5px 20px;
+	padding: var(--button-padding);
 	margin: 15px;
 	cursor: pointer;
 	transition: background-color 0.3s;
-	font-size: 35px;
+	font-size: var(--button-font-size);
 	white-space: nowrap;
+	box-sizing: border-box;
 	/*display: inline-block; // Permet la transformation
 	/* box-shadow: 2px 5px 10px rgba(0,0,0,0.2); */
-
 }
-
 button:focus {
 	outline: none;  /* Supprime l'outline par défaut */
 	box-shadow: 0 0 0 3px #ffbf47; /* Ajoute un halo pour le focus, choisis une couleur qui contraste bien */
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
-
 button:hover {
 	background-color: #8e44ad;
 	border-color: #a759b6;
 	color: white;
 	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
-
-
+/*
+@media (max-width: 480px) {
+	// styles pour les petits écrans de smartphones
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	// styles pour les tablettes en orientation portrait et les petits ordinateurs portables
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	// styles pour les tablettes en orientation paysage et les petits ordinateurs portables
+}
+@media (min-width: 1200px) {
+	// styles pour les grands ordinateurs portables et les ordinateurs de bureau
+}
+*/
 
 @media (max-width: 600px) {
 	/*body {
