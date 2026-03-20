@@ -1,3 +1,35 @@
+:root {
+    /* Police */
+    --font-family: Arial, Helvetica, sans-serif;
+
+    /* Tailles texte */
+    --font-title: 2.6rem;
+    --font-text: 1.05rem;
+    --font-button: 1.1rem;
+
+    /* Couleurs */
+    --text-color: white;
+    --bg-start: #1a1a1a;
+    --bg-end: #050505;
+
+    --button-bg: #111111;
+    --button-bg-hover: #1b1b1b;
+    --button-border: white;
+    --button-text: white;
+}
+
+/* Exemple thème clair */
+body[data-theme="light"] {
+    --text-color: #111;
+    --bg-start: #f2f2f2;
+    --bg-end: #dcdcdc;
+
+    --button-bg: #ffffff;
+    --button-bg-hover: #eaeaea;
+    --button-border: #111;
+    --button-text: #111;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,9 +37,9 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #1a1a1a, #050505);
-    color: white;
+    font-family: var(--font-family);
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end);
+    color: var(--text-color);
 
     display: flex;
     justify-content: center;
@@ -36,13 +68,13 @@ body {
 
 h1 {
     margin: 0 0 12px 0;
-    font-size: 2.6rem;
+    font-size: var(--font-title);
 }
 
 .description {
     max-width: 500px;
     margin: 0 0 30px 0;
-    font-size: 1.05rem;
+    font-size: var(--font-text);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85);
 }
@@ -67,12 +99,12 @@ h1 {
     padding: 18px 24px;
 
     text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
+    color: var(--button-text);
+    font-size: var(--font-button);
     font-weight: bold;
 
-    background-color: #111111;
-    border: 2px solid white;
+    background-color: var(--button-bg);
+    border: 2px solid var(--button-border);
     border-radius: 14px;
 
     transition:
@@ -84,7 +116,7 @@ h1 {
 .link-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
-    background-color: #1b1b1b;
+    background-color: var(--button-bg-hover);
 }
 
 .link-button:active {
