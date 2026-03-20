@@ -1,155 +1,176 @@
-:root {
-	--text-color-light: #333;
-	--text-color-dark: #E0E0E0;
-	--background-color-light: #FFF;
-	--background-color-dark: #121212;
-	--border-color: #ffffff;
-	--button-font-size: 35px;
-	--button-padding: 5px 20px;
-}
+/* =========================
+   Base
+========================= */
 
-@keyframes shake {
-	0%, 100% {
-		transform: translateX(0px) rotateZ(0deg);
-	}
-	10%, 30%, 50%, 70%, 90% {
-		transform: translateX(-5px) rotateZ(-3deg);
-	}
-	20%, 40%, 60%, 80% {
-		transform: translateX(5px) rotateZ(3deg);
-	}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html {
-	height: 100%; /* Assure que html prend toute la hauteur de la fenêtre du navigateur */
-	/*background: black;
-	background-image: url('images/base_animationv3.png');*
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;*/
+    font-size: 16px;
 }
 
 body {
-	height: 100%; /* Assure que le body prend toute la hauteur de la fenêtre du navigateur */
-	margin: 0; /* Enlève la marge par défaut */
-	display: flex; /* Active Flexbox */
-	justify-content: center; /* Centre horizontalement */
-	align-items: center; /* Centre verticalement */
-	flex-direction: column; /* Organise les enfants en colonne */
-	font-family: Arial, sans-serif; /* Police de caractère pour tout le document */
-	font-size: 16px;
-	color: var(--text-color-light);
-	/*background: var(--background-color-light); /* Assure que body n'a pas de fond propre, évitant les superpositions indésirables **/
-	background: linear-gradient(to bottom, #afb9d7, #7e85ae);
-	/*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Icon_moon-wukong.png');
-	background-size: cover;*/
-	box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f5f5;
+    background:
+        radial-gradient(circle at top, #2a2a2a 0%, #111111 45%, #050505 100%);
 }
 
-h1 {
-	font-size: 2rem; /* Taille de police plus grande pour les titres principaux */
-	line-height: 1.2; /* Hauteur de ligne plus serrée pour les titres */
-	margin: 20px 0; /* Ajoute une marge au-dessus et en dessous du titre */
+/* =========================
+   Layout
+========================= */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
 }
 
-p {
-	font-size: 1em; /* Taille de police standard pour les paragraphes */
-	line-height: 1; /* Hauteur de ligne pour améliorer la lisibilité */
+.card {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: rgba(20, 20, 20, 0.88);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-.profile-image {
-	width: 100px; /* Définis la largeur de l'image */
-	height: 100px; /* Définis la hauteur de l'image */
-	border-radius: 50%; /* Rend l'image complètement ronde */
-	object-fit: cover; /* S'assure que l'image couvre la zone sans perdre ses proportions */
-	border: 3px solid white; /* Optionnel : Ajoute une bordure blanche autour de l'image */
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optionnel : Ajoute une légère ombre pour un effet de profondeur */
-	background: white;
-	filter: none;
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    text-align: center;
+    margin-bottom: 28px;
 }
 
-.center-container {
-	display: flex;
-	flex-direction: column; /* Organise les enfants verticalement */
-	justify-content: center; /* Centre les enfants verticalement dans le conteneur */
-	align-items: center; /* Centre les enfants horizontalement dans le conteneur */
-	/*width: 80%; /* Prend la largeur totale du parent */
-	margin-top:3%;
-	background-color: transparent;
-	box-sizing: border-box;
+.avatar {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 18px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
 }
 
-button {
-	background-color: #4b97e3;
-	color: white;
-	min-width: 400px;
-	max-width: 800px;
-	border: 3px solid var(--border-color);
-	border-radius: 25px; /* Rend les bords arrondis */
-	padding: var(--button-padding);
-	margin: 15px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	font-size: var(--button-font-size);
-	white-space: nowrap;
-	box-sizing: border-box;
-	/*display: inline-block; // Permet la transformation
-	/* box-shadow: 2px 5px 10px rgba(0,0,0,0.2); */
+.title {
+    margin: 0 0 12px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
 }
-button:focus {
-	outline: none;  /* Supprime l'outline par défaut */
-	box-shadow: 0 0 0 3px #ffbf47; /* Ajoute un halo pour le focus, choisis une couleur qui contraste bien */
-	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+
+.subtitle {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
 }
-button:hover {
-	background-color: #8e44ad;
-	border-color: #a759b6;
-	color: white;
-	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+
+/* =========================
+   Links
+========================= */
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
-/*
+
+.link-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #1f1f1f 0%, #111111 100%);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+/* Hover gardé volontairement vivant */
+.link-btn:hover {
+    transform: translateY(-3px) scale(1.015);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.34),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    background: linear-gradient(180deg, #2a2a2a 0%, #161616 100%);
+}
+
+.link-btn:active {
+    transform: translateY(0) scale(0.995);
+}
+
+.link-btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.48);
+}
+
+/* =========================
+   Responsive
+========================= */
+
 @media (max-width: 480px) {
-	// styles pour les petits écrans de smartphones
-}
-@media (min-width: 768px) and (max-width: 991px) {
-	// styles pour les tablettes en orientation portrait et les petits ordinateurs portables
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-	// styles pour les tablettes en orientation paysage et les petits ordinateurs portables
-}
-@media (min-width: 1200px) {
-	// styles pour les grands ordinateurs portables et les ordinateurs de bureau
-}
-*/
+    .page {
+        padding: 16px;
+    }
 
-@media (max-width: 600px) {
-	/*body {
-		font-size: 22px;
-	}*/
-	h1 {
-		font-size: 130%;
-	}
-	p {
-		font-size: 1em; /* Taille de police standard pour les paragraphes */
-		line-height: 1; /* Hauteur de ligne pour améliorer la lisibilité */
-		text-align: center; /* Assure que le texte est centré, même lorsqu'il passe à la ligne */
-	}
-	.profile-image {
-		width: 75px; /* Définis la largeur de l'image */
-		height: 75px;
-	}
-	.center-container {
-		margin-top: 2%; /* Réduit la marge en haut pour les petits écrans */
-	}
-	button {
-		min-width: 80%;
-		font-size: 115%;
-	}
-}
+    .card {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: var(--background-color-dark);
-		color: var(--text-color-dark);
-	}
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .link-btn {
+        padding: 16px 14px;
+        font-size: 0.98rem;
+    }
 }
